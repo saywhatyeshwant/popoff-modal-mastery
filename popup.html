@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PopOff</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="icons/icon48.png" alt="PopOff logo">
+        <h1>PopOff</h1>
+      </div>
+      <div class="toggle-container">
+        <label class="switch">
+          <input type="checkbox" id="main-toggle">
+          <span class="slider round"></span>
+        </label>
+        <span id="status-text">Enabled</span>
+      </div>
+    </header>
+    
+    <div class="site-info">
+      <h2>Current site:</h2>
+      <div class="site-details">
+        <span id="current-site">loading...</span>
+        <div class="site-toggle">
+          <label class="switch small">
+            <input type="checkbox" id="site-toggle">
+            <span class="slider round"></span>
+          </label>
+          <span id="site-status-text">Enabled for this site</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="selectors">Selectors</button>
+      <button class="tab-btn" data-tab="buttons">Buttons</button>
+      <button class="tab-btn" data-tab="stats">Stats</button>
+    </div>
+    
+    <div class="tab-content active" id="selectors-tab">
+      <h2>CSS Selectors</h2>
+      <p class="info-text">Add custom CSS selectors for elements you want to hide</p>
+      
+      <div class="selector-list" id="selector-list">
+        <!-- Selectors will be added here dynamically -->
+      </div>
+      
+      <div class="add-selector">
+        <input type="text" id="new-selector" placeholder="Enter CSS selector (e.g., .modal, #popup)">
+        <button id="add-selector-btn" class="btn">Add</button>
+      </div>
+    </div>
+    
+    <div class="tab-content" id="buttons-tab">
+      <h2>Button Patterns</h2>
+      <p class="info-text">Add text patterns for buttons to click automatically</p>
+      
+      <div class="button-list" id="button-list">
+        <!-- Button patterns will be added here dynamically -->
+      </div>
+      
+      <div class="add-button-pattern">
+        <input type="text" id="new-button-pattern" placeholder="Enter button text (e.g., Close, No thanks)">
+        <button id="add-button-btn" class="btn">Add</button>
+      </div>
+    </div>
+    
+    <div class="tab-content" id="stats-tab">
+      <h2>Statistics</h2>
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-label">Elements hidden:</span>
+          <span class="stat-value" id="elements-hidden">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Buttons clicked:</span>
+          <span class="stat-value" id="buttons-clicked">0</span>
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      <button id="refresh-btn" class="btn secondary">Reprocess Page</button>
+      <a href="https://github.com/yourusername/popoff" target="_blank" class="btn text">GitHub</a>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
